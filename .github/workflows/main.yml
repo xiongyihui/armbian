@@ -1,0 +1,16 @@
+- name: Rebuild Armbian
+  uses: armbian/build@v25.5.0-trunk.285
+  with:
+    # GitHub installation access token
+    armbian_token:  "${{secrets.GITHUB_TOKEN}}"
+    
+    # Build image or kernel
+    armbian_target: image # optional, default is kernel
+    # Choose framework branch
+    armbian_branch: main # optional, default is main
+    # Choose kernel branch
+    armbian_kernel_branch: current # optional, default is current
+    # Choose userspace release
+    armbian_release: noble
+    armbian_board: orangepi5pro
+    armbian_ui: server
